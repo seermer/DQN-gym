@@ -54,6 +54,8 @@ class DQN:
                 shutil.rmtree("./replays")
                 os.mkdir("./replays")
                 print("cleared")
+            else:
+                exit(0)
 
     def _get_model(self):
         if self.dim == 1:
