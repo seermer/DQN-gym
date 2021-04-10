@@ -46,6 +46,8 @@ class DQN:
                                  loss=tf.losses.mean_squared_error)
         self.train_model.trainable = True
         self.target_model.trainable = False
+        if not os.path.exists("./replays"):
+            os.mkdir("./replays")
         if len(os.listdir("./replays/")) != 0:
             ans = input("replay folder is not empty, clear it? (y/n)")
             if "y" in ans.lower():
